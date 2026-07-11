@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>დავალების დამატება</title>
+    </head>
+    <body>
+        <h1>დავალების დამატება</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">დამატება</button>
+        </form>
+
+        <a href="/tasks/">უკან სიაში</a>
+    </body>
+</html>

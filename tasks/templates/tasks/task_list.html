@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>დავალებების სია</title>
+    </head>
+    <body>
+        <h1>დავალებების სია</h1>
+
+        <a href="/tasks/add">+ დავალების დამატება</a>
+
+        <form method="POST" action="/logout/">
+            {% csrf_token %}
+            <button type="submit">გამოსვლა</button>
+        </form>
+
+        <hr>
+
+        {% for task in tasks %}
+        <div>
+            <h3><a href="/tasks/{{ task.pk }}/">{{ task.title }}</a></h3>
+            <p>სტატუსი: {{ task.completed }}</p>
+        </div>
+        <hr>
+        {% endfor %}
+    </body>
+</html>

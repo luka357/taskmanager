@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ task.title }}</title>
+    </head>
+    <body>
+        <h1>{{ task.title }}</h1>
+        <p>აღწერა: {{ task.desc }}</p>
+        <p>სტატუსი: {% if task.completed %} ✅ შესრულებული {% else %} ⏳ შეუსრულებელი {% endif %}</p>
+
+        <a href="/tasks/{{ task.pk }}/update/">რედაქტირება</a>
+        <a href="/tasks/{{ task.pk }}/delete/">წაშლა</a>
+        <a href="/tasks/">უკან სიაში</a>
+    </body>
+</html>
